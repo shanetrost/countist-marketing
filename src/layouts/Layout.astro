@@ -1,0 +1,281 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  jsonLd?: object | object[];
+  currentPath?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = 'https://countist.app/images/og-home.png',
+  jsonLd,
+  currentPath = '',
+} = Astro.props;
+
+const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : null;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Countist" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <link rel="icon" href="/images/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/images/webclip.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link href="/css/normalize.css" rel="stylesheet" />
+  <link href="/css/webflow.css" rel="stylesheet" />
+  <link href="/css/countist.css" rel="stylesheet" />
+
+  {jsonLdArray && jsonLdArray.map((ld) => (
+    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+  ))}
+
+  <style>
+    .fade-in-bottom {
+      opacity: 0;
+      transform: translateY(2rem);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in-bottom.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in-bottom {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+    /* FAQ accordion */
+    .faq_item {
+      border-bottom: 1px solid var(--border-color--border-primary, #e8e8e8);
+    }
+    .faq_item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      gap: 1rem;
+    }
+    .faq_item summary::-webkit-details-marker { display: none; }
+    .faq_icon-plus { font-size: 1.5rem; line-height: 1; flex-shrink: 0; transition: transform 0.2s ease; }
+    .faq_item[open] .faq_icon-plus { transform: rotate(45deg); }
+    .faq_answer-text { padding-bottom: 1.25rem; }
+    /* Plans grid single column on small screens */
+    @media (max-width: 767px) {
+      .plans_grid { grid-template-columns: 1fr !important; }
+    }
+    /* Nav sign-in / get-started buttons */
+    .nav_actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .button.is-small .button_text-large { padding: 0.5rem 1rem; font-size: 0.875rem; }
+    /* Stats grid */
+    .stats_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    @media (max-width: 767px) {
+      .stats_grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    .stats_number {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--color--accent--400, #ff592c);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="global-styles w-embed">
+      <style>body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }</style>
+    </div>
+
+    <!-- NAV -->
+    <div class="nav_component w-nav" role="banner">
+      <div class="padding-global">
+        <div class="nav_container">
+          <a href="/" class="nav_brand w-nav-brand" aria-label="Countist home">
+            <img src="/images/countist-logo-6.png" loading="eager" width="160" height="40" alt="Countist" />
+          </a>
+          <nav role="navigation" class="nav_menu w-nav-menu">
+            <div class="nav_menu-inner">
+              <a href="/pricing" class={`nav_menu_link w-nav-link${currentPath === '/pricing' ? ' w--current' : ''}`}>Pricing</a>
+              <a href="/faqs" class={`nav_menu_link w-nav-link${currentPath === '/faqs' ? ' w--current' : ''}`}>FAQs</a>
+              <a href="/contact" class={`nav_menu_link w-nav-link${currentPath === '/contact' ? ' w--current' : ''}`}>Contact</a>
+            </div>
+            <div class="nav_actions">
+              <a href="https://app.countist.app" data-wf--button--variant="secondary" class="button w-inline-block">
+                <div class="button_text-large"><div>Sign In</div></div>
+              </a>
+              <a href="https://app.countist.app" data-wf--button--variant="primary" class="button w-inline-block">
+                <div class="button_text-large"><div>Get Started</div></div>
+              </a>
+            </div>
+          </nav>
+          <div class="nav_button w-nav-button" role="button" aria-label="Toggle navigation" tabindex="0">
+            <div class="hamburger_6_wrap">
+              <div class="hamburger_6_line"></div>
+              <div class="hamburger_6_line"></div>
+              <div class="hamburger_6_line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="main-wrapper">
+      <slot />
+    </main>
+
+    <!-- FOOTER -->
+    <section class="section_footer background-color-secondary">
+      <div class="padding-global">
+        <div class="w-layout-blockcontainer container-large w-container">
+          <div class="footer">
+            <div class="footer_cta">
+              <div class="padding-top padding-xhuge fade-in-bottom">
+                <div class="cta">
+                  <div class="badge">
+                    <div class="badge_text"><div>What's next?</div></div>
+                  </div>
+                  <div class="cta_heading text-align-center">
+                    <h2 class="heading-style-h1 is-cta">Ready when you are. Start your free trial.</h2>
+                  </div>
+                  <div class="button-group">
+                    <a data-wf--button--variant="primary" href="https://app.countist.app" class="button w-inline-block">
+                      <div class="button_text-large"><div>Get Started</div></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-layout-grid footer_body">
+              <div class="footer_logo-wrapper">
+                <div class="footer_description">
+                  <p class="text-size-regular">Track every subscription. Spot what you're wasting. Keep your bank account private.</p>
+                </div>
+              </div>
+              <div class="footer_nav">
+                <div class="footer_column">
+                  <div class="text-size-regular text-weight-medium">Product</div>
+                  <ul role="list" class="footer_nav-links w-list-unstyled">
+                    <li><a href="/pricing" class="footer_menu_link text-color-secondary w-inline-block"><div>Pricing</div></a></li>
+                    <li><a href="/faqs" class="footer_menu_link w-inline-block"><div>FAQs</div></a></li>
+                    <li><a href="/contact" class="footer_menu_link w-inline-block"><div>Contact</div></a></li>
+                  </ul>
+                </div>
+                <div class="footer_column">
+                  <div class="text-size-regular text-weight-medium">Legal</div>
+                  <ul role="list" class="footer_nav-links w-list-unstyled">
+                    <li><a href="/privacy" class="footer_menu_link w-inline-block"><div>Privacy Policy</div></a></li>
+                    <li><a href="/terms" class="footer_menu_link w-inline-block"><div>Terms of Service</div></a></li>
+                  </ul>
+                </div>
+                <div class="footer_column">
+                  <div class="text-size-regular text-weight-medium">Contact</div>
+                  <ul role="list" class="footer_nav-links w-list-unstyled">
+                    <li>
+                      <a href="mailto:countist@structurl.io" class="footer_menu_link w-inline-block">
+                        <div>countist@structurl.io</div>
+                      </a>
+                    </li>
+                  </ul>
+                  <p class="text-size-small text-color-secondary" style="margin-top:1.25rem;line-height:1.5;">
+                    We donate a portion of revenue to
+                    <a href="https://www.councilforeconed.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">financial literacy education</a>
+                    through the Council for Economic Education.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="footer_copy">
+              <div class="text-size-small text-color-secondary">© 2026 Countist. All rights reserved.</div>
+              <div style="display:flex;gap:1.5rem;">
+                <a href="/privacy" class="footer_legal-link w-inline-block">
+                  <div class="text-size-small text-color-secondary">Privacy Policy</div>
+                </a>
+                <a href="/terms" class="footer_legal-link w-inline-block">
+                  <div class="text-size-small text-color-secondary">Terms of Service</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile nav toggle
+      const navBtn = document.querySelector<HTMLElement>('.nav_button');
+      const navMenu = document.querySelector<HTMLElement>('.nav_menu');
+
+      navBtn?.addEventListener('click', () => {
+        navBtn.classList.toggle('w--open');
+        navMenu?.classList.toggle('w--open');
+      });
+
+      navMenu?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navBtn?.classList.remove('w--open');
+          navMenu?.classList.remove('w--open');
+        });
+      });
+
+      // Scroll-triggered fade animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      document.querySelectorAll('.fade-in-bottom').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

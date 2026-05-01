@@ -1,0 +1,283 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Countist Subscription Tracker",
+    "description": "AI-powered subscription management. Track unlimited subscriptions, detect overlaps, compare prices. No bank connection required.",
+    "url": "https://countist.app/pricing",
+    "brand": { "@type": "Brand", "name": "Countist" },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Monthly Plan",
+        "price": "4.99",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "4.99",
+          "priceCurrency": "USD",
+          "unitText": "MONTH"
+        },
+        "availability": "https://schema.org/InStock",
+        "url": "https://app.countist.app"
+      },
+      {
+        "@type": "Offer",
+        "name": "Annual Plan",
+        "price": "49",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "49",
+          "priceCurrency": "USD",
+          "unitText": "YEAR"
+        },
+        "availability": "https://schema.org/InStock",
+        "url": "https://app.countist.app"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does Countist offer a free trial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Countist offers a 14-day free trial. All features are included during the trial. You will not be charged until day 15, and you can cancel anytime before that with no cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in the Countist plan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every Countist plan includes unlimited subscription tracking, AI price anomaly detection, overlap and duplicate detection, calendar view of all renewal dates, smart tips, and data export. There are no feature tiers."
+        }
+      }
+    ]
+  }
+];
+
+const features = [
+  "Track unlimited subscriptions",
+  "Smart AI insights for duplicates & overlaps",
+  "Calendar view of all renewal dates",
+  "AI price anomaly detection",
+  "Personalized smart tips",
+  "Data export anytime",
+  "Cancel whenever you choose",
+];
+---
+
+<Layout
+  title="Pricing — $4.99/month or $49/year — Countist Subscription Tracker"
+  description="One plan, everything included. $4.99/month or $49/year. 14-day free trial, no credit card surprise — cancel before day 15 and pay nothing."
+  canonical="https://countist.app/pricing"
+  jsonLd={jsonLd}
+  currentPath="/pricing"
+>
+  <!-- HERO -->
+  <section class="section_main-hero background-color-secondary">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-small w-container">
+        <div class="section-heading max-width-large fade-in-bottom" style="text-align:center;">
+          <div class="badge" style="margin-bottom:1.25rem;"><div class="badge_text"><div>Simple Pricing</div></div></div>
+          <h1 class="heading-style-h1 text-align-center">Supercharge Your Budget</h1>
+          <p class="text-size-large text-color-secondary text-align-center">
+            One plan. Everything included. No feature tiers, no upsells, no hidden fees. Cancel anytime.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING CARDS -->
+  <section class="section_pricing">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-large w-container">
+        <div class="plans_items fade-in-bottom">
+          <div class="w-layout-grid plans_grid" style="grid-template-columns:repeat(2,1fr);gap:2rem;">
+
+            <!-- Countist Plan -->
+            <div class="plans_item">
+              <div class="plans_inner">
+                <div class="plans_heading">
+                  <h3 class="heading-style-h4">Countist</h3>
+                  <p class="text-size-regular text-color-secondary">Full access to every feature. No limits.</p>
+                </div>
+                <div class="plans_price">
+                  <div class="heading-style-h2">$4.99</div>
+                  <div class="text-size-regular text-color-secondary">/month</div>
+                </div>
+                <p class="text-size-small text-color-secondary" style="margin-bottom:1rem;">or $49/year — save $10</p>
+                <div class="horizontal-divider"></div>
+                <ul role="list" class="plans_features-list">
+                  {features.map(f => (
+                    <li class="plans_list-item">
+                      <div class="icon-1x1-medium w-embed">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                          <circle cx="12" cy="12.417" r="10" fill="#FF592C"/>
+                          <path d="M8 12.417L10.5 14.917L16 9.41699" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                      <div class="text-size-regular">{f}</div>
+                    </li>
+                  ))}
+                </ul>
+                <a href="https://app.countist.app" data-wf--button--variant="primary" class="button w-inline-block" style="width:100%;justify-content:center;">
+                  <div class="button_text-large"><div>Get started</div></div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Free Trial -->
+            <div class="plans_item">
+              <div class="plans_inner">
+                <div class="plans_heading">
+                  <h3 class="heading-style-h4">Free Trial</h3>
+                  <p class="text-size-regular text-color-secondary">Try everything free. No charge until day 15.</p>
+                </div>
+                <div class="plans_price">
+                  <div class="heading-style-h2">$0</div>
+                  <div class="text-size-regular text-color-secondary">/14 days</div>
+                </div>
+                <p class="text-size-small text-color-secondary" style="margin-bottom:1rem;">Then $4.99/month — cancel before day 15 to pay nothing</p>
+                <div class="horizontal-divider"></div>
+                <ul role="list" class="plans_features-list">
+                  {["All Countist features", "Unlimited subscriptions", "Full AI insights", "No charge until day 15", "Cancel anytime"].map(f => (
+                    <li class="plans_list-item">
+                      <div class="icon-1x1-medium w-embed">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                          <circle cx="12" cy="12.417" r="10" fill="#FF592C"/>
+                          <path d="M8 12.417L10.5 14.917L16 9.41699" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                      <div class="text-size-regular">{f}</div>
+                    </li>
+                  ))}
+                </ul>
+                <a href="https://app.countist.app" data-wf--button--variant="secondary" class="button w-inline-block" style="width:100%;justify-content:center;">
+                  <div class="button_text-large"><div>Try free for 14 days</div></div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENTIATORS -->
+  <section class="section_features-small background-color-secondary">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-large fade-in-bottom w-container">
+        <div class="section-heading max-width-large">
+          <div class="section-heading_badge">
+            <div class="badge"><div class="badge_text"><div>Why Countist</div></div></div>
+          </div>
+          <h2 class="heading-style-h2 text-align-center">Built differently</h2>
+          <p class="text-size-medium text-color-secondary text-align-center">
+            Most subscription trackers connect to your bank. Countist doesn't — and that's the point.
+          </p>
+        </div>
+        <div class="features-small">
+          <div class="w-layout-grid features-small_grid">
+            <div class="features-small_item">
+              <div class="hero-icon">
+                <div class="icon-1x1-medium w-embed">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 1L20 5V11C20 16.5228 16.5228 21 12 22C7.47715 21 4 16.5228 4 11V5L12 1Z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="features-small_heading">
+                <h3 class="heading-style-h4">No bank connections. Ever.</h3>
+                <p class="text-size-regular text-color-secondary">Manual entry keeps your banking credentials completely out of the picture. 30 seconds per subscription.</p>
+              </div>
+            </div>
+            <div class="features-small_item">
+              <div class="hero-icon">
+                <div class="icon-1x1-medium w-embed">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM19.4853 18.0711L22.3137 20.8995L20.8995 22.3137L18.0711 19.4853L19.4853 18.0711Z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="features-small_heading">
+                <h3 class="heading-style-h4">Overlap detection built in</h3>
+                <p class="text-size-regular text-color-secondary">Find services doing the same job and cut the redundant one. Countist knows which tools overlap.</p>
+              </div>
+            </div>
+            <div class="features-small_item">
+              <div class="hero-icon">
+                <div class="icon-1x1-medium w-embed">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14 4.4375C15.3462 4.4375 16.4375 3.34619 16.4375 2H17.5625C17.5625 3.34619 18.6538 4.4375 20 4.4375V5.5625C18.6538 5.5625 17.5625 6.65381 17.5625 8H16.4375C16.4375 6.65381 15.3462 5.5625 14 5.5625V4.4375ZM1 11C4.31371 11 7 8.31371 7 5H9C9 8.31371 11.6863 11 15 11V13C11.6863 13 9 15.6863 9 19H7C7 15.6863 4.31371 13 1 13V11ZM17.25 14C17.25 15.7949 15.7949 17.25 14 17.25V18.75C15.7949 18.75 17.25 20.2051 17.25 22H18.75C18.75 20.2051 20.2051 18.75 22 18.75V17.25C20.2051 17.25 18.75 15.7949 18.75 14H17.25Z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="features-small_heading">
+                <h3 class="heading-style-h4">AI pricing intelligence</h3>
+                <p class="text-size-regular text-color-secondary">Know when you're paying more than the current advertised price. AI flags the gap automatically.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ TEASER -->
+  <section class="section_faq">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-small fade-in-bottom w-container">
+        <div class="section-heading max-width-large" style="margin-bottom:2.5rem;">
+          <div class="badge" style="margin-bottom:1rem;"><div class="badge_text"><div>Questions</div></div></div>
+          <h2 class="heading-style-h2 text-align-center">Common questions about pricing</h2>
+        </div>
+        <div class="faq">
+          <div class="faq_list">
+            {[
+              {
+                q: "Is the free trial really free?",
+                a: "Yes. Your trial is completely free for 14 days. You won't be charged anything until day 15. Cancel anytime before that and you owe nothing."
+              },
+              {
+                q: "Why do you require a credit card for the trial?",
+                a: "Requiring a credit card keeps the platform fast and secure for serious users. It also means your data is ready to go if you decide to continue — no interruption on day 15."
+              },
+              {
+                q: "Is there a discount for annual billing?",
+                a: "Yes. The annual plan is $49/year — that's $10 cheaper than 12 months of monthly billing. You can switch between plans anytime from your account settings."
+              },
+              {
+                q: "Can I cancel anytime?",
+                a: "Yes. Cancel from your account settings at any time. If you cancel during a billing period, you'll keep access until the end of that period."
+              },
+            ].map(({ q, a }) => (
+              <details class="faq_item">
+                <summary>
+                  <h3 class="heading-style-h5" style="margin:0;">{q}</h3>
+                  <span class="faq_icon-plus">+</span>
+                </summary>
+                <div class="faq_answer-text">
+                  <p class="text-size-regular text-color-secondary">{a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+          <div style="text-align:center;margin-top:2rem;">
+            <a href="/faqs" class="footer_menu_link w-inline-block">View all FAQs →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

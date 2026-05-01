@@ -1,0 +1,402 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Countist",
+    "url": "https://countist.app",
+    "logo": "https://countist.app/images/countist-logo-6.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "countist@structurl.io",
+      "contactType": "customer support"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Countist",
+    "description": "AI-powered subscription tracker that identifies what you're overpaying, detects overlapping services, and keeps every renewal date visible — without connecting to your bank.",
+    "url": "https://countist.app",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Monthly Plan",
+        "price": "4.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Annual Plan",
+        "price": "49",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    ],
+    "featureList": [
+      "AI price anomaly detection",
+      "Subscription overlap detection",
+      "Calendar view of all renewal dates",
+      "Data export",
+      "No bank connection required",
+      "Duplicate subscription alerts"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SiteNavigationElement",
+    "name": ["Pricing", "FAQs", "Contact", "Sign In"],
+    "url": [
+      "https://countist.app/pricing",
+      "https://countist.app/faqs",
+      "https://countist.app/contact",
+      "https://app.countist.app"
+    ]
+  }
+];
+---
+
+<Layout
+  title="Countist — Subscription Tracker | Save Money Without Connecting Your Bank"
+  description="Track every subscription, catch duplicates, compare prices with AI, and see every renewal date in one calendar. No bank connection required. $4.99/month."
+  canonical="https://countist.app/"
+  jsonLd={jsonLd}
+  currentPath="/"
+>
+  <!-- HERO -->
+  <section class="section_main-hero background-color-secondary">
+    <div class="padding-global">
+      <div class="w-layout-blockcontainer container-large w-container">
+        <div class="main-hero">
+          <div class="main-hero_heading-content">
+            <div class="main-hero_heading max-width-large fade-in-bottom">
+              <div class="badge" style="margin-bottom:1.5rem;">
+                <div class="badge_text"><div>Subscription Intelligence</div></div>
+              </div>
+              <h1 class="heading-style-h1 text-align-center">Take control of every dollar you spend on subscriptions</h1>
+              <p class="text-size-large text-color-secondary text-align-center">
+                Most people underestimate their subscription spend by 2.5×. Countist finds what you're wasting, flags overlaps, and keeps you in control — without ever touching your bank account.
+              </p>
+            </div>
+            <div class="button-group fade-in-bottom">
+              <a data-wf--button--variant="primary" href="https://app.countist.app" class="button w-inline-block">
+                <div class="button_text-large"><div>Get started – $4.99/month</div></div>
+              </a>
+              <a data-wf--button--variant="secondary" href="https://app.countist.app" class="button w-inline-block">
+                <div class="button_text-large"><div>Try free for 14 days</div></div>
+              </a>
+            </div>
+          </div>
+          <div class="main-hero_image fade-in-bottom">
+            <img
+              src="/images/dashboard_1dashboard.avif"
+              loading="eager"
+              sizes="(max-width: 991px) 100vw, 60vw"
+              alt="Countist subscription dashboard showing tracked subscriptions, categories, and renewal calendar"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section_client-logos background-color-secondary">
+    <div class="padding-global padding-section-medium">
+      <div class="w-layout-blockcontainer container-large w-container">
+        <div class="fade-in-bottom">
+          <h2 class="heading-style-h5 text-align-center text-color-secondary" style="margin-bottom:3rem;">
+            The subscription problem is bigger than you think
+          </h2>
+          <div class="stats_grid">
+            <div>
+              <div class="stats_number">89%</div>
+              <p class="text-size-regular text-weight-medium" style="margin-bottom:0.25rem;">Underestimate their spending</p>
+              <p class="text-size-small text-color-secondary">of consumers underestimate monthly subscription costs (West Monroe)</p>
+            </div>
+            <div>
+              <div class="stats_number">42%</div>
+              <p class="text-size-regular text-weight-medium" style="margin-bottom:0.25rem;">Forget they subscribed</p>
+              <p class="text-size-small text-color-secondary">of consumers forget subscriptions and keep paying (C+R Research)</p>
+            </div>
+            <div>
+              <div class="stats_number">2.5×</div>
+              <p class="text-size-regular text-weight-medium" style="margin-bottom:0.25rem;">Costs exceed estimates</p>
+              <p class="text-size-small text-color-secondary">how much actual costs exceed consumer estimates (Recurly)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES MEDIUM (3 cards) -->
+  <section class="section_features-medium">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-large fade-in-bottom w-container">
+        <div class="features-medium">
+          <div class="section-heading max-width-large">
+            <div class="section-heading_badge">
+              <div class="badge"><div class="badge_text"><div>Features</div></div></div>
+            </div>
+            <h2 class="heading-style-h2 text-align-center">Everything you need to stop overpaying</h2>
+            <p class="text-size-medium text-color-secondary text-align-center">
+              Countist tracks your subscriptions, surfaces what's costing you more than it should, and keeps you ahead of every renewal date.
+            </p>
+          </div>
+          <div class="w-layout-grid features-medium_grid">
+            <div class="feature-medium">
+              <div class="features-medium_image aspect-ratio-square">
+                <img src="/images/feaures-03_1feaures-03.avif" loading="lazy" alt="AI price check identifying overpayment on subscriptions" />
+              </div>
+              <div class="features-medium_heading">
+                <h3 class="heading-style-h4 features-1">AI Price Check</h3>
+                <p class="text-size-regular text-color-secondary">Flag subscriptions where you're paying more than the current advertised price. Powered by AI against a live pricing database.</p>
+              </div>
+            </div>
+            <div class="feature-medium">
+              <div class="features-medium_image aspect-ratio-square">
+                <img src="/images/feaures-02_1feaures-02.avif" loading="lazy" sizes="100vw" alt="Overlap detection finding redundant subscription services" />
+              </div>
+              <div class="features-medium_heading">
+                <h3 class="heading-style-h4 features-1">Overlap Detection</h3>
+                <p class="text-size-regular text-color-secondary">Find services you're paying for twice. Streaming, productivity, storage — Countist surfaces overlaps so you can cut what you don't need.</p>
+              </div>
+            </div>
+            <div class="feature-medium">
+              <div class="features-medium_image aspect-ratio-square">
+                <img src="/images/feaures-01_1feaures-01.avif" loading="lazy" sizes="100vw" alt="Calendar view showing subscription renewal dates" />
+              </div>
+              <div class="features-medium_heading">
+                <h3 class="heading-style-h4 features-1">Calendar View</h3>
+                <p class="text-size-regular text-color-secondary">See every renewal date at a glance. No more surprise charges — know what's hitting your account before it does.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES LARGE (2 rows) -->
+  <section class="section_features-large">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-large w-container">
+        <div class="w-layout-grid features-large_grid">
+
+          <!-- Row 1: Privacy First -->
+          <div class="features-large_item fade-in-bottom">
+            <div class="features-large_column">
+              <div class="features-large_heading">
+                <div class="badge"><div class="badge_text"><div>Privacy First</div></div></div>
+                <h2 class="heading-style-h2">No bank connections. Ever.</h2>
+                <p class="text-size-medium text-color-secondary">
+                  Add subscriptions manually — it takes 30 seconds per entry and puts you in complete control of your financial data. Nothing is shared with third parties. No Plaid. No read access.
+                </p>
+                <div class="w-layout-grid features-large_icons">
+                  <div class="features-large_icons-item">
+                    <div class="hero-icon background-color-alternate">
+                      <div class="icon-1x1-medium w-embed">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 1L20 5V11C20 16.5228 16.5228 21 12 22C7.47715 21 4 16.5228 4 11V5L12 1ZM12 3.2315L6 6.3315V11C6 15.3416 8.70842 18.9908 12 20.0659C15.2916 18.9908 18 15.3416 18 11V6.3315L12 3.2315Z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="text-size-regular text-color-secondary">Manual entry keeps your banking credentials completely out of the picture.</div>
+                  </div>
+                  <div class="features-large_icons-item">
+                    <div class="hero-icon background-color-alternate">
+                      <div class="icon-1x1-medium w-embed">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM12 10.5858L5.92893 4.51472L4.51472 5.92893L10.5858 12L4.51472 18.0711L5.92893 19.4853L12 13.4142L18.0711 19.4853L19.4853 18.0711L13.4142 12L19.4853 5.92893L18.0711 4.51472L12 10.5858Z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="text-size-regular text-color-secondary">Your data stays private — not sold, shared, or used for advertising.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="features-large_column">
+              <div class="features-large_image aspect-ratio-square">
+                <img src="/images/feaures-04_1feaures-04.avif" loading="lazy" sizes="(max-width: 800px) 100vw, 800px" srcset="/images/feaures-04_1-p-500.png 500w, /images/feaures-04_1feaures-04.avif 800w" alt="Privacy-first subscription management interface" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: AI Insights -->
+          <div class="features-large_item fade-in-bottom">
+            <div class="features-large_column">
+              <div class="features-large_image aspect-ratio-square">
+                <img src="/images/feaures-05_1feaures-05.avif" loading="lazy" sizes="(max-width: 800px) 100vw, 800px" alt="AI insights showing subscription spending analysis" />
+              </div>
+            </div>
+            <div id="w-node-features-row2-col" class="features-large_column first">
+              <div class="features-large_heading">
+                <div class="badge"><div class="badge_text"><div>AI Insights</div></div></div>
+                <div class="section-heading_title">
+                  <h2 class="heading-style-h2">Your smart subscription sidekick</h2>
+                </div>
+                <div class="section-heading_subtitle">
+                  <p class="text-size-medium text-color-secondary">
+                    Countist checks prices, finds overlaps, and generates personalized tips — before your next billing cycle hits. AI that actually earns its keep.
+                  </p>
+                </div>
+                <div class="w-layout-grid features-large_icons">
+                  <div class="features-large_icons-item">
+                    <div class="hero-icon background-color-alternate">
+                      <div class="icon-1x1-medium w-embed">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M14 4.4375C15.3462 4.4375 16.4375 3.34619 16.4375 2H17.5625C17.5625 3.34619 18.6538 4.4375 20 4.4375V5.5625C18.6538 5.5625 17.5625 6.65381 17.5625 8H16.4375C16.4375 6.65381 15.3462 5.5625 14 5.5625V4.4375ZM1 11C4.31371 11 7 8.31371 7 5H9C9 8.31371 11.6863 11 15 11V13C11.6863 13 9 15.6863 9 19H7C7 15.6863 4.31371 13 1 13V11ZM17.25 14C17.25 15.7949 15.7949 17.25 14 17.25V18.75C15.7949 18.75 17.25 20.2051 17.25 22H18.75C18.75 20.2051 20.2051 18.75 22 18.75V17.25C20.2051 17.25 18.75 15.7949 18.75 14H17.25Z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="text-size-regular text-color-secondary">AI price anomaly detection across hundreds of popular services.</div>
+                  </div>
+                  <div class="features-large_icons-item">
+                    <div class="hero-icon background-color-alternate">
+                      <div class="icon-1x1-medium w-embed">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M11 2.04938V13H21.9506C21.4489 18.0533 17.1853 22 12 22C6.47715 22 2 17.5229 2 12C2 6.81465 5.94668 2.5511 11 2.04938ZM13 2.04938C17.7244 2.51845 21.4816 6.27559 21.9506 11H13V2.04938Z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="text-size-regular text-color-secondary">Duplicate and overlap alerts on demand — cut the waste instantly.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SMALL (6 icons) -->
+  <section class="section_features-small">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-large fade-in-bottom w-container">
+        <div class="section-heading max-width-large">
+          <div class="section-heading_badge">
+            <div class="badge"><div class="badge_text"><div>Everything Included</div></div></div>
+          </div>
+          <h2 class="heading-style-h2 text-align-center">All the tools. One flat price.</h2>
+          <p class="text-size-medium text-color-secondary text-align-center">
+            No feature tiers. No upsells. Every Countist user gets the full toolkit for $4.99/month or $49/year.
+          </p>
+        </div>
+        <div class="features-small">
+          <div class="w-layout-grid features-small_grid">
+            <div class="features-small_item">
+              <div class="hero-icon">
+                <div class="icon-1x1-medium w-embed">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14 4.4375C15.3462 4.4375 16.4375 3.34619 16.4375 2H17.5625C17.5625 3.34619 18.6538 4.4375 20 4.4375V5.5625C18.6538 5.5625 17.5625 6.65381 17.5625 8H16.4375C16.4375 6.65381 15.3462 5.5625 14 5.5625V4.4375ZM1 11C4.31371 11 7 8.31371 7 5H9C9 8.31371 11.6863 11 15 11V13C11.6863 13 9 15.6863 9 19H7C7 15.6863 4.31371 13 1 13V11ZM17.25 14C17.25 15.7949 15.7949 17.25 14 17.25V18.75C15.7949 18.75 17.25 20.2051 17.25 22H18.75C18.75 20.2051 20.2051 18.75 22 18.75V17.25C20.2051 17.25 18.75 15.7949 18.75 14H17.25Z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="features-small_heading">
+                <h3 class="heading-style-h4">AI Price Check</h3>
+                <p class="text-size-regular text-color-secondary">Compare what you're paying vs. current advertised rates for your exact plan.</p>
+              </div>
+            </div>
+            <div class="features-small_item">
+              <div class="hero-icon">
+                <div class="icon-1x1-medium w-embed">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM11 13V17H7V13H11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="features-small_heading">
+                <h3 class="heading-style-h4">Calendar View</h3>
+                <p class="text-size-regular text-color-secondary">Visualize every renewal date in a clean monthly calendar. No surprises.</p>
+              </div>
+            </div>
+            <div class="features-small_item">
+              <div class="hero-icon">
+                <div class="icon-1x1-medium w-embed">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11 18H7.94101C7.64391 16.7274 6.30412 15.6857 5.75395 14.9992C4.65645 13.6297 4 11.8915 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10C20 11.8925 19.3428 13.6315 18.2443 15.0014C17.6944 15.687 16.3558 16.7276 16.059 18H13V13H11V18ZM16 20V21C16 22.1046 15.1046 23 14 23H10C8.89543 23 8 22.1046 8 21V20H16Z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="features-small_heading">
+                <h3 class="heading-style-h4">Smart Tips</h3>
+                <p class="text-size-regular text-color-secondary">AI-generated recommendations personalized to your subscription mix.</p>
+              </div>
+            </div>
+            <div class="features-small_item">
+              <div class="hero-icon">
+                <div class="icon-1x1-medium w-embed">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM11 4C7.13401 4 4 7.13401 4 11C4 14.866 7.13401 18 11 18C14.866 18 18 14.866 18 11C18 7.13401 14.866 4 11 4ZM19.4853 18.0711L22.3137 20.8995L20.8995 22.3137L18.0711 19.4853L19.4853 18.0711Z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="features-small_heading">
+                <h3 class="heading-style-h4">Duplicate Check</h3>
+                <p class="text-size-regular text-color-secondary">Surface subscriptions doing the same job so you can pick one and cut the other.</p>
+              </div>
+            </div>
+            <div class="features-small_item">
+              <div class="hero-icon">
+                <div class="icon-1x1-medium w-embed">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM13 12H8V14H13V12ZM16 8H8V10H16V8Z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="features-small_heading">
+                <h3 class="heading-style-h4">Data Export</h3>
+                <p class="text-size-regular text-color-secondary">Download your full subscription list anytime. Your data is always yours.</p>
+              </div>
+            </div>
+            <div class="features-small_item">
+              <div class="hero-icon">
+                <div class="icon-1x1-medium w-embed">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11 2.04938V13H21.9506C21.4489 18.0533 17.1853 22 12 22C6.47715 22 2 17.5229 2 12C2 6.81465 5.94668 2.5511 11 2.04938ZM13 2.04938C17.7244 2.51845 21.4816 6.27559 21.9506 11H13V2.04938Z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="features-small_heading">
+                <h3 class="heading-style-h4">Overlap Detection</h3>
+                <p class="text-size-regular text-color-secondary">Find service overlaps you didn't know were costing you month after month.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING TEASER -->
+  <section class="section_features-small background-color-secondary">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-small fade-in-bottom w-container">
+        <div class="section-heading max-width-large" style="text-align:center;">
+          <div class="badge" style="margin-bottom:1rem;"><div class="badge_text"><div>Simple Pricing</div></div></div>
+          <h2 class="heading-style-h2 text-align-center">$4.99/month or $49/year</h2>
+          <p class="text-size-medium text-color-secondary text-align-center" style="margin-bottom:2rem;">
+            Everything included. No feature tiers. Cancel anytime. Try free for 14 days — no charge until day 15.
+          </p>
+          <div class="button-group" style="justify-content:center;">
+            <a href="/pricing" data-wf--button--variant="secondary" class="button w-inline-block">
+              <div class="button_text-large"><div>See full pricing</div></div>
+            </a>
+            <a href="https://app.countist.app" data-wf--button--variant="primary" class="button w-inline-block">
+              <div class="button_text-large"><div>Try free for 14 days</div></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

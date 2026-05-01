@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    q: "Do I have to connect my bank account?",
+    a: "No. Countist never requires bank connections. You add subscriptions manually — it takes about 30 seconds per entry — and you stay in complete control of your financial data. No Plaid, no OAuth, no read access to your bank."
+  },
+  {
+    q: "Why do you need my credit card for a free trial?",
+    a: "Requiring a credit card keeps the platform fast and secure for serious users. Your trial is completely free for 14 days. You won't be charged anything until day 15, and you can cancel anytime before that with no cost."
+  },
+  {
+    q: "What makes Countist different from other subscription trackers?",
+    a: "Three things: (1) No bank connections — you manually control exactly what's tracked. (2) Countist actively identifies overlapping subscriptions and duplicate services rather than just listing your expenses. (3) AI flags suspicious pricing and shows you renewal dates in a visual calendar so you can act before charges hit."
+  },
+  {
+    q: "Will you cancel subscriptions for me?",
+    a: "No. Countist gives you the information to make informed decisions, but we don't cancel subscriptions on your behalf. That keeps your accounts fully in your control."
+  },
+  {
+    q: "What happens after my free trial ends?",
+    a: "After 14 days, you'll be automatically charged $4.99/month unless you cancel. You can also switch to the annual plan ($49/year) for a $10 savings. Both options are available in your account settings."
+  },
+  {
+    q: "Can I export my data?",
+    a: "Yes. Your data is yours. You can download your full subscription list at any time from your account settings — no lock-in."
+  },
+  {
+    q: "What if I have 50 subscriptions?",
+    a: "No limits. Track as many subscriptions as you have. Countist is built to handle large subscription lists and still surface meaningful insights."
+  },
+  {
+    q: "Is my data private?",
+    a: "Yes. Your data is completely private — never sold, shared, or used for advertising purposes. We do not connect to your bank, and we do not share your subscription data with any third parties."
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": a
+    }
+  }))
+};
+---
+
+<Layout
+  title="FAQ — Questions Answered — Countist Subscription Tracker"
+  description="Common questions about Countist: bank connections, privacy, free trial, pricing, data export, and more. Everything answered honestly."
+  canonical="https://countist.app/faqs"
+  jsonLd={jsonLd}
+  currentPath="/faqs"
+>
+  <!-- HERO -->
+  <section class="section_main-hero background-color-secondary">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-small w-container">
+        <div class="fade-in-bottom">
+          <div class="badge" style="margin-bottom:1.25rem;"><div class="badge_text"><div>Help Center</div></div></div>
+          <h1 class="heading-style-h1">Need Help?<br />Questions people actually ask.</h1>
+          <p class="text-size-large text-color-secondary" style="margin-top:1rem;">
+            Can't find your answer? Email us at <a href="mailto:countist@structurl.io" style="text-decoration:underline;">countist@structurl.io</a> and we'll get back to you within 24 hours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ LIST -->
+  <section class="section_faq">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-small fade-in-bottom w-container">
+        <div class="faq">
+          <div class="faq_list">
+            {faqs.map(({ q, a }) => (
+              <details class="faq_item">
+                <summary>
+                  <h2 class="heading-style-h5" style="margin:0;">{q}</h2>
+                  <span class="faq_icon-plus">+</span>
+                </summary>
+                <div class="faq_answer-text">
+                  <p class="text-size-regular text-color-secondary">{a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section_features-small background-color-secondary">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-small fade-in-bottom w-container" style="text-align:center;">
+        <h2 class="heading-style-h2 text-align-center">Still have questions?</h2>
+        <p class="text-size-medium text-color-secondary text-align-center" style="margin-bottom:2rem;">
+          Reach out at <a href="mailto:countist@structurl.io" style="text-decoration:underline;">countist@structurl.io</a> — we respond within 24 hours on business days.
+        </p>
+        <div class="button-group" style="justify-content:center;">
+          <a href="/contact" data-wf--button--variant="secondary" class="button w-inline-block">
+            <div class="button_text-large"><div>Contact us</div></div>
+          </a>
+          <a href="https://app.countist.app" data-wf--button--variant="primary" class="button w-inline-block">
+            <div class="button_text-large"><div>Get started – $4.99/month</div></div>
+          </a>
+        </div>
+        <p class="text-size-small text-color-secondary" style="margin-top:1rem;">Cancel anytime during your trial — no charge until day 15.</p>
+      </div>
+    </div>
+  </section>
+</Layout>

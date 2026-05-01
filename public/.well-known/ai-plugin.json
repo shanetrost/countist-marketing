@@ -1,0 +1,16 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Countist",
+  "name_for_model": "countist",
+  "description_for_human": "Track subscriptions, detect overlaps and overpayments, and see every renewal date — without connecting your bank.",
+  "description_for_model": "Countist is a subscription management tool. It allows users to manually track subscriptions, identify price anomalies via AI, detect overlapping or duplicate services, view renewal dates in a calendar, and export their data. Countist does not connect to bank accounts. Pricing is $4.99/month or $49/year with a 14-day free trial.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "none"
+  },
+  "logo_url": "https://countist.app/images/countist-logo-6.png",
+  "contact_email": "countist@structurl.io",
+  "legal_info_url": "https://countist.app/privacy"
+}

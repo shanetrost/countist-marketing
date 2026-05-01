@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Privacy Policy — Countist Subscription Tracker"
+  description="Countist privacy policy: what data we collect, how we use it, and your rights. We never sell your data or connect to your bank."
+  canonical="https://countist.app/privacy"
+  currentPath="/privacy"
+>
+  <section class="section_main-hero background-color-secondary">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-small w-container">
+        <div class="fade-in-bottom">
+          <div class="badge" style="margin-bottom:1.25rem;"><div class="badge_text"><div>Legal</div></div></div>
+          <h1 class="heading-style-h1">Privacy Policy</h1>
+          <p class="text-size-regular text-color-secondary" style="margin-top:0.5rem;">Last updated: May 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section_faq">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-small fade-in-bottom w-container">
+        <div style="max-width:65ch;">
+          <p class="text-size-regular text-color-secondary" style="margin-bottom:2rem;">
+            For our full privacy policy, please contact us at <a href="mailto:countist@structurl.io" style="text-decoration:underline;">countist@structurl.io</a>. This page will be updated with the complete policy shortly.
+          </p>
+          <h2 class="heading-style-h4" style="margin-bottom:1rem;">The short version</h2>
+          <ul style="list-style:disc;padding-left:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+            <li class="text-size-regular text-color-secondary">We never connect to your bank. All data is manually entered by you.</li>
+            <li class="text-size-regular text-color-secondary">We never sell your data to third parties.</li>
+            <li class="text-size-regular text-color-secondary">We never use your data for advertising.</li>
+            <li class="text-size-regular text-color-secondary">You can export and delete your data at any time from your account settings.</li>
+            <li class="text-size-regular text-color-secondary">We use Clerk for authentication, Stripe for payments, and Neon for database storage.</li>
+          </ul>
+          <div style="margin-top:2.5rem;">
+            <a href="mailto:countist@structurl.io?subject=Privacy%20Question" data-wf--button--variant="secondary" class="button w-inline-block">
+              <div class="button_text-large"><div>Email privacy questions</div></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

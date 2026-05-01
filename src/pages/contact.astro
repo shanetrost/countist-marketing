@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Countist",
+    "url": "https://countist.app/contact",
+    "description": "Get in touch with the Countist team for support, feature requests, bug reports, or general questions.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Countist",
+      "email": "countist@structurl.io",
+      "url": "https://countist.app"
+    }
+  }
+];
+---
+
+<Layout
+  title="Contact — Get Subscription Clarity Today — Countist Subscription Tracker"
+  description="Questions about Countist? Need help with your account? Found a bug? Email countist@structurl.io — we respond within 24 hours on business days."
+  canonical="https://countist.app/contact"
+  jsonLd={jsonLd}
+  currentPath="/contact"
+>
+  <!-- HERO -->
+  <section class="section_main-hero background-color-secondary">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-large w-container">
+        <div class="w-layout-grid features-large_grid" style="grid-template-columns:1fr 1fr;align-items:start;">
+
+          <!-- Left: contact info -->
+          <div class="fade-in-bottom">
+            <div class="badge" style="margin-bottom:1.25rem;"><div class="badge_text"><div>Get In Touch</div></div></div>
+            <h1 class="heading-style-h1">What's On Your Mind?</h1>
+            <p class="text-size-medium text-color-secondary" style="margin:1.5rem 0;">
+              Have a question about the service? Need help with your account? Found a bug? Have a feature suggestion? We respond to all messages within 24 hours on business days.
+            </p>
+            <p class="text-size-regular text-color-secondary" style="margin-bottom:0.5rem;">
+              If you're asking about a specific account, please include the email address associated with your account.
+            </p>
+            <div style="margin-top:2rem;">
+              <a
+                href="mailto:countist@structurl.io?subject=Question%20about%20Countist"
+                data-wf--button--variant="primary"
+                class="button w-inline-block"
+              >
+                <div class="button_text-large"><div>Email us</div></div>
+              </a>
+              <p class="text-size-small text-color-secondary" style="margin-top:0.75rem;">
+                <a href="mailto:countist@structurl.io" style="text-decoration:underline;">countist@structurl.io</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: quick info cards -->
+          <div class="fade-in-bottom">
+            <div style="display:flex;flex-direction:column;gap:1.5rem;">
+              <div class="features-small_item" style="background:var(--color--brown--50,#f5f4f1);border-radius:1rem;padding:1.5rem;">
+                <div class="hero-icon" style="margin-bottom:1rem;">
+                  <div class="icon-1x1-medium w-embed">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8.49816 20.0048H15.5018C14.8432 21.5842 13.5794 22.848 12 23.5066C10.4206 22.848 9.15679 21.5842 8.49816 20.0048ZM18 14.8095L20 17.0778V19.0048H4V17.0778L6 14.8095V9.00481C6 5.52156 8.50442 2.55825 12 1.46002C15.4956 2.55825 18 5.52156 18 9.00481V14.8095Z"/>
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="heading-style-h5">Response time</h3>
+                <p class="text-size-regular text-color-secondary">Within 24 hours on business days (Mon–Fri).</p>
+              </div>
+              <div class="features-small_item" style="background:var(--color--brown--50,#f5f4f1);border-radius:1rem;padding:1.5rem;">
+                <div class="hero-icon" style="margin-bottom:1rem;">
+                  <div class="icon-1x1-medium w-embed">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 1L20 5V11C20 16.5228 16.5228 21 12 22C7.47715 21 4 16.5228 4 11V5L12 1Z"/>
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="heading-style-h5">Common topics</h3>
+                <p class="text-size-regular text-color-secondary">Account help, billing questions, bug reports, feature requests, and general feedback.</p>
+              </div>
+              <div class="features-small_item" style="background:var(--color--brown--50,#f5f4f1);border-radius:1rem;padding:1.5rem;">
+                <div class="hero-icon" style="margin-bottom:1rem;">
+                  <div class="icon-1x1-medium w-embed">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M2 8.99374C2 5.68349 4.67654 3 8.00066 3H15.9993C19.3134 3 22 5.69478 22 8.99374V21H8.00066C4.68659 21 2 18.3052 2 15.0063V8.99374ZM14 11V13H16V11H14ZM8 11V13H10V11H8Z"/>
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="heading-style-h5">Faster answers</h3>
+                <p class="text-size-regular text-color-secondary">Check <a href="/faqs" style="text-decoration:underline;">FAQs</a> first — most common questions are answered there instantly.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ QUICK LIST -->
+  <section class="section_faq background-color-secondary">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-small fade-in-bottom w-container">
+        <div class="section-heading max-width-large" style="margin-bottom:2.5rem;">
+          <div class="badge" style="margin-bottom:1rem;"><div class="badge_text"><div>Quick Answers</div></div></div>
+          <h2 class="heading-style-h2 text-align-center">Common questions</h2>
+        </div>
+        <div class="faq">
+          <div class="faq_list">
+            {[
+              {
+                q: "Do I have to connect my bank account?",
+                a: "No. Countist never requires bank connections. You add subscriptions manually in about 30 seconds each. Complete control, complete privacy."
+              },
+              {
+                q: "What happens after my free trial?",
+                a: "After 14 days you'll be charged $4.99/month unless you cancel. Cancel anytime before day 15 and you won't be charged anything."
+              },
+              {
+                q: "Is my data private?",
+                a: "Yes. Your data is never sold, shared, or used for advertising. We don't connect to your bank and we don't share your data with third parties."
+              },
+              {
+                q: "Can I cancel anytime?",
+                a: "Yes. Cancel from your account settings at any time. If you cancel mid-period, you keep access until the end of that billing period."
+              },
+            ].map(({ q, a }) => (
+              <details class="faq_item">
+                <summary>
+                  <h3 class="heading-style-h5" style="margin:0;">{q}</h3>
+                  <span class="faq_icon-plus">+</span>
+                </summary>
+                <div class="faq_answer-text">
+                  <p class="text-size-regular text-color-secondary">{a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+          <div style="text-align:center;margin-top:2rem;">
+            <a href="/faqs" class="footer_menu_link w-inline-block">See all FAQs →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section_features-small">
+    <div class="padding-global padding-section-large">
+      <div class="w-layout-blockcontainer container-small fade-in-bottom w-container" style="text-align:center;">
+        <h2 class="heading-style-h2 text-align-center">Ready to take control of your subscriptions?</h2>
+        <p class="text-size-medium text-color-secondary text-align-center" style="margin-bottom:2rem;">
+          Start your 14-day free trial. Cancel anytime before it ends — no charge until day 15.
+        </p>
+        <a href="https://app.countist.app" data-wf--button--variant="primary" class="button w-inline-block">
+          <div class="button_text-large"><div>Get started – $4.99/month</div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
