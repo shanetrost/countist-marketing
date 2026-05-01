@@ -72,18 +72,20 @@ const jsonLd = [
   <section class="section_main-hero background-color-secondary">
     <div class="padding-global">
       <div class="w-layout-blockcontainer container-large w-container">
-        <div class="main-hero">
-          <div class="main-hero_heading-content">
-            <div class="main-hero_heading max-width-large fade-in-bottom">
-              <div class="badge" style="margin-bottom:1.5rem;">
-                <div class="badge_text"><div>Subscription Intelligence</div></div>
+        <div class="main-hero" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem;">
+          <div class="main-hero_heading-content" style="width:100%;">
+            <div class="main-hero_heading max-width-large" style="margin:0 auto;">
+              <div style="display:flex;justify-content:center;margin-bottom:1.5rem;">
+                <div class="badge">
+                  <div class="badge_text"><div>Subscription Intelligence</div></div>
+                </div>
               </div>
               <h1 class="heading-style-h1 text-align-center">Take control of every dollar you spend on subscriptions</h1>
               <p class="text-size-large text-color-secondary text-align-center">
                 Most people underestimate their subscription spend by 2.5×. Countist finds what you're wasting, flags overlaps, and keeps you in control — without ever touching your bank account.
               </p>
             </div>
-            <div class="button-group fade-in-bottom">
+            <div class="button-group" style="justify-content:center;margin-top:2rem;">
               <a data-wf--button--variant="primary" href="https://app.countist.app" class="button w-inline-block">
                 <div class="button_text-large"><div>Get started – $4.99/month</div></div>
               </a>
@@ -92,12 +94,14 @@ const jsonLd = [
               </a>
             </div>
           </div>
-          <div class="main-hero_image fade-in-bottom">
+          <!-- TODO: Replace with actual Countist app screenshot (1200px wide, taken from app.countist.app) -->
+          <div class="main-hero_image fade-in-bottom" style="width:100%;max-width:900px;border-radius:1rem;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.12);">
             <img
-              src="/images/dashboard_1dashboard.avif"
+              src="/images/features-image_1features-image.avif"
               loading="eager"
-              sizes="(max-width: 991px) 100vw, 60vw"
+              sizes="(max-width: 991px) 100vw, 900px"
               alt="Countist subscription dashboard showing tracked subscriptions, categories, and renewal calendar"
+              style="width:100%;display:block;"
             />
           </div>
         </div>
