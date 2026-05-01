@@ -1,7 +1,10 @@
 import { defineConfig } from 'astro/config';
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
   site: 'https://countist.app',
-  output: 'static',
+  output: "hybrid",
   compressHTML: true,
+  adapter: cloudflare()
 });
