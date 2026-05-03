@@ -1,10 +1,10 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "npx astro build"
+buildCommand = "npx astro build && npm install -g serve"
 
 [deploy]
-startCommand = "npx astro preview --host 0.0.0.0 --port $PORT"
+startCommand = "serve dist -l $PORT"
 healthcheckPath = "/"
-healthcheckTimeout = 30
+healthcheckTimeout = 60
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 3
