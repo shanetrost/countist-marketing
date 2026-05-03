@@ -27,7 +27,7 @@ const mime = {
 };
 
 createServer(async (req, res) => {
-  let p = req.url.split('?')[0].replace(/\/+$/, '') || '/';
+  let p = decodeURIComponent(req.url.split('?')[0].replace(/\/+$/, '') || '/');
 
   const candidates = [
     join(DIST, p),
