@@ -4943,4 +4943,89 @@ figcaption {
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
+}}
+
+/* ─── Countist custom overrides ─────────────────────────────────────── */
+
+/* Eliminate the white band above the cream sections */
+html,
+body,
+.page-wrapper,
+.main-wrapper {
+  background-color: #f5f4f1 !important;
+}
+/* Default (unscrolled) nav takes the page cream instead of being transparent over white */
+.nav_component:not(.is-scrolled) {
+  background-color: #f5f4f1 !important;
+}
+/* Nav is handled in Layout.astro <style> with Astro scoped CSS         */
+
+/* Tighter section vertical padding */
+.padding-section-large {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+.padding-section-medium {
+  padding-top: 3.5rem !important;
+  padding-bottom: 3.5rem !important;
+}
+@media (max-width: 991px) {
+  .padding-section-large {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  .padding-section-medium {
+    padding-top: 2.75rem !important;
+    padding-bottom: 2.75rem !important;
+  }
+}
+@media (max-width: 479px) {
+  .padding-section-large {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  .padding-section-medium {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Orange outline button (hero secondary) */
+.button.button-outline-orange {
+  background-color: transparent !important;
+  border: 2px solid var(--color--accent--400, #ff592c) !important;
+  color: var(--color--accent--400, #ff592c) !important;
+}
+.button.button-outline-orange .button_text-large div {
+  color: var(--color--accent--400, #ff592c) !important;
+}
+.button.button-outline-orange:hover {
+  background-color: rgba(255, 89, 44, 0.07) !important;
+  border-color: var(--color--accent--500, #d44a20) !important;
+}
+
+/* Section top padding: reduce gap under section headers */
+.section_stats .padding-section-large,
+.section_features-medium .padding-section-large {
+  padding-top: 2.5rem;
+}
+
+/* Tighten the gap between Stats and Features */
+.section_stats .padding-section-large {
+  padding-bottom: 2rem !important;
+}
+.section_features-medium .padding-section-large {
+  padding-top: 1rem !important;
+}
+
+/* Section subtitles → orange */
+.section_features-medium .section-heading p,
+.section_features-small .section-heading p,
+.section_plans .section-heading p {
+  color: var(--color--accent--400, #ff592c) !important;
+}
+
+/* Features medium: card heading aligned to image edge */
+.features-medium_heading {
+  padding-left: 0.5rem;
 }

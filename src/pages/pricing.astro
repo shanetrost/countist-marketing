@@ -79,17 +79,18 @@ const features = [
   title="Pricing — $4.99/month or $49/year — Countist Subscription Tracker"
   description="One plan, everything included. $4.99/month or $49/year. 14-day free trial, no credit card surprise — cancel before day 15 and pay nothing."
   canonical="https://countist.app/pricing"
+  ogImage="https://countist.app/images/og-pricing.png"
   jsonLd={jsonLd}
   currentPath="/pricing"
 >
   <!-- HERO -->
   <section class="section_main-hero background-color-secondary">
-    <div class="padding-global padding-section-large">
+    <div class="padding-global padding-section-large" style="padding-bottom:2rem !important;">
       <div class="w-layout-blockcontainer container-small w-container">
         <div class="section-heading max-width-large fade-in-bottom" style="text-align:center;">
           <div class="badge" style="margin-bottom:1.25rem;"><div class="badge_text"><div>Simple Pricing</div></div></div>
           <h1 class="heading-style-h1 text-align-center">Supercharge Your Budget</h1>
-          <p class="text-size-large text-color-secondary text-align-center">
+          <p class="text-size-large text-color-secondary text-align-center" style="color: var(--color--accent--400, #ff592c);">
             One plan. Everything included. No feature tiers, no upsells, no hidden fees. Cancel anytime.
           </p>
         </div>
@@ -98,84 +99,72 @@ const features = [
   </section>
 
   <!-- PRICING CARDS -->
-  <section class="section_pricing">
-    <div class="padding-global padding-section-large">
-      <div class="w-layout-blockcontainer container-large w-container">
-        <div class="plans_items fade-in-bottom">
-          <div class="w-layout-grid plans_grid" style="grid-template-columns:repeat(2,1fr);gap:2rem;">
+  <section class="section_plans background-color-secondary">
+    <div class="padding-global padding-section-large" style="padding-top:0 !important;">
+      <div class="w-layout-blockcontainer container-large fade-in-bottom w-container">
+        <div class="w-layout-grid plans_grid">
 
-            <!-- Countist Plan -->
-            <div class="plans_item">
-              <div class="plans_inner">
-                <div class="plans_heading">
-                  <h3 class="heading-style-h4">Countist</h3>
-                  <p class="text-size-regular text-color-secondary">Full access to every feature. No limits.</p>
-                </div>
-                <div class="plans_price">
-                  <div class="heading-style-h2">$4.99</div>
-                  <div class="text-size-regular text-color-secondary">/month</div>
-                </div>
-                <p class="text-size-small text-color-secondary" style="margin-bottom:1rem;">or $49/year — save $10</p>
-                <div class="horizontal-divider"></div>
-                <ul role="list" class="plans_features-list">
-                  {features.map(f => (
-                    <li class="plans_list-item">
-                      <div class="icon-1x1-medium w-embed">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                          <circle cx="12" cy="12.417" r="10" fill="#FF592C"/>
-                          <path d="M8 12.417L10.5 14.917L16 9.41699" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </div>
-                      <div class="text-size-regular">{f}</div>
-                    </li>
-                  ))}
-                </ul>
-                <a href="https://app.countist.app" data-wf--button--variant="primary" class="button w-inline-block" style="width:100%;justify-content:center;">
-                  <div class="button_text-large"><div>Get started</div></div>
-                </a>
+          <!-- Free Trial -->
+          <div class="plans_item">
+            <div class="plans_inner">
+              <div class="plans_heading">
+                <h3 class="heading-style-h4">Free Trial</h3>
+                <p class="text-size-regular text-color-secondary">Try everything free. No charge until day 15.</p>
               </div>
-            </div>
-
-            <!-- Free Trial -->
-            <div class="plans_item">
-              <div class="plans_inner">
-                <div class="plans_heading">
-                  <h3 class="heading-style-h4">Free Trial</h3>
-                  <p class="text-size-regular text-color-secondary">Try everything free. No charge until day 15.</p>
-                </div>
-                <div class="plans_price">
-                  <div class="heading-style-h2">$0</div>
-                  <div class="text-size-regular text-color-secondary">/14 days</div>
-                </div>
-                <p class="text-size-small text-color-secondary" style="margin-bottom:1rem;">Then $4.99/month — cancel before day 15 to pay nothing</p>
-                <div class="horizontal-divider"></div>
-                <ul role="list" class="plans_features-list">
-                  {["All Countist features", "Unlimited subscriptions", "Full AI insights", "No charge until day 15", "Cancel anytime"].map(f => (
-                    <li class="plans_list-item">
-                      <div class="icon-1x1-medium w-embed">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                          <circle cx="12" cy="12.417" r="10" fill="#FF592C"/>
-                          <path d="M8 12.417L10.5 14.917L16 9.41699" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </div>
-                      <div class="text-size-regular">{f}</div>
-                    </li>
-                  ))}
-                </ul>
-                <a href="https://app.countist.app" data-wf--button--variant="secondary" class="button w-inline-block" style="width:100%;justify-content:center;">
-                  <div class="button_text-large"><div>Try free for 14 days</div></div>
-                </a>
+              <div class="plans_price">
+                <div class="heading-style-h2">$0</div>
+                <div class="text-size-regular text-color-secondary">/14 days</div>
               </div>
+              <div class="text-size-small text-color-secondary" style="margin-top:-0.5rem;margin-bottom:0.5rem;">Then $4.99/month — cancel before day 15 to pay nothing</div>
+              <div class="horizontal-divider"></div>
+              <ul role="list" class="plans_features-list">
+                {["All Countist features", "Unlimited subscriptions", "Full AI insights", "No charge until day 15", "Cancel anytime"].map(f => (
+                  <li class="plans_list-item">
+                    <div class="icon-1x1-medium w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><circle cx="12" cy="12.417" r="10" fill="#FF592C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M2 12.417C2 17.9399 6.47715 22.417 12 22.417C17.5229 22.417 22 17.9399 22 12.417C22 6.89415 17.5229 2.41699 12 2.41699C6.47715 2.41699 2 6.89415 2 12.417ZM16.3495 8.94057C16.7282 9.28773 16.7538 9.87616 16.4067 10.2549L11.2904 15.8362C11.1189 16.0233 10.8785 16.1322 10.6248 16.1377C10.3712 16.1432 10.1263 16.0449 9.94687 15.8655L7.62129 13.5399C7.25802 13.1766 7.25802 12.5876 7.62129 12.2243C7.98458 11.8611 8.57356 11.8611 8.93685 12.2243L10.5754 13.8629L15.0352 8.99772C15.3823 8.619 15.9708 8.59342 16.3495 8.94057Z" fill="#FFF3ED"/></svg></div>
+                    <div class="text-size-regular">{f}</div>
+                  </li>
+                ))}
+              </ul>
+              <a href="https://app.countist.app" data-wf--button--variant="secondary" class="button w-inline-block" style="width:100%;justify-content:center;">
+                <div class="button_text-large"><div>Try free for 14 days</div></div>
+              </a>
             </div>
-
           </div>
+
+          <!-- Countist (featured) -->
+          <div class="plans_item is-featured">
+            <div class="plans_inner">
+              <div class="plans_heading">
+                <h3 class="heading-style-h4">Countist</h3>
+                <p class="text-size-regular text-color-secondary">Full access to every feature. No limits.</p>
+              </div>
+              <div class="plans_price">
+                <div class="heading-style-h2">$4.99</div>
+                <div class="text-size-regular text-color-secondary">/month</div>
+              </div>
+              <div class="text-size-small text-color-secondary" style="margin-top:-0.5rem;margin-bottom:0.5rem;">or $49/year — save $10</div>
+              <div class="horizontal-divider"></div>
+              <ul role="list" class="plans_features-list">
+                {features.map(f => (
+                  <li class="plans_list-item">
+                    <div class="icon-1x1-medium w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><circle cx="12" cy="12.417" r="10" fill="#FF592C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M2 12.417C2 17.9399 6.47715 22.417 12 22.417C17.5229 22.417 22 17.9399 22 12.417C22 6.89415 17.5229 2.41699 12 2.41699C6.47715 2.41699 2 6.89415 2 12.417ZM16.3495 8.94057C16.7282 9.28773 16.7538 9.87616 16.4067 10.2549L11.2904 15.8362C11.1189 16.0233 10.8785 16.1322 10.6248 16.1377C10.3712 16.1432 10.1263 16.0449 9.94687 15.8655L7.62129 13.5399C7.25802 13.1766 7.25802 12.5876 7.62129 12.2243C7.98458 11.8611 8.57356 11.8611 8.93685 12.2243L10.5754 13.8629L15.0352 8.99772C15.3823 8.619 15.9708 8.59342 16.3495 8.94057Z" fill="#FFF3ED"/></svg></div>
+                    <div class="text-size-regular">{f}</div>
+                  </li>
+                ))}
+              </ul>
+              <a href="https://app.countist.app" data-wf--button--variant="primary" class="button w-inline-block" style="width:100%;justify-content:center;">
+                <div class="button_text-large"><div>Get started</div></div>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
   <!-- DIFFERENTIATORS -->
-  <section class="section_features-small background-color-secondary">
+  <section class="section_features-small">
     <div class="padding-global padding-section-large">
       <div class="w-layout-blockcontainer container-large fade-in-bottom w-container">
         <div class="section-heading max-width-large">
@@ -234,50 +223,73 @@ const features = [
     </div>
   </section>
 
-  <!-- FAQ TEASER -->
-  <section class="section_faq">
-    <div class="padding-global padding-section-large">
-      <div class="w-layout-blockcontainer container-small fade-in-bottom w-container">
-        <div class="section-heading max-width-large" style="margin-bottom:2.5rem;">
-          <div class="badge" style="margin-bottom:1rem;"><div class="badge_text"><div>Questions</div></div></div>
-          <h2 class="heading-style-h2 text-align-center">Common questions about pricing</h2>
-        </div>
-        <div class="faq">
-          <div class="faq_list">
-            {[
-              {
-                q: "Is the free trial really free?",
-                a: "Yes. Your trial is completely free for 14 days. You won't be charged anything until day 15. Cancel anytime before that and you owe nothing."
-              },
-              {
-                q: "Why do you require a credit card for the trial?",
-                a: "Requiring a credit card keeps the platform fast and secure for serious users. It also means your data is ready to go if you decide to continue — no interruption on day 15."
-              },
-              {
-                q: "Is there a discount for annual billing?",
-                a: "Yes. The annual plan is $49/year — that's $10 cheaper than 12 months of monthly billing. You can switch between plans anytime from your account settings."
-              },
-              {
-                q: "Can I cancel anytime?",
-                a: "Yes. Cancel from your account settings at any time. If you cancel during a billing period, you'll keep access until the end of that period."
-              },
-            ].map(({ q, a }) => (
-              <details class="faq_item">
-                <summary>
-                  <h3 class="heading-style-h5" style="margin:0;">{q}</h3>
-                  <span class="faq_icon-plus">+</span>
-                </summary>
-                <div class="faq_answer-text">
-                  <p class="text-size-regular text-color-secondary">{a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-          <div style="text-align:center;margin-top:2rem;">
-            <a href="/faqs" class="footer_menu_link w-inline-block">View all FAQs →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<style>
+  /* 3-column grid for Why Countist cards */
+  .features-small_grid {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+  @media (max-width: 767px) {
+    .features-small_grid { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 479px) {
+    .features-small_grid { grid-template-columns: 1fr !important; }
+  }
+
+  .plans_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 0.25rem;
+  }
+  @media (max-width: 767px) {
+    .plans_grid { grid-template-columns: 1fr; }
+  }
+  .plans_item {
+    border-radius: 1rem;
+    border: 1px solid var(--border-color--border-primary, #e8e8e8);
+    background: #fff;
+    overflow: hidden;
+  }
+  .plans_item.is-featured {
+    border-color: #ff592c;
+    border-width: 2px;
+  }
+  .plans_inner {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .plans_price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+  }
+  .horizontal-divider {
+    height: 1px;
+    background: var(--border-color--border-primary, #e8e8e8);
+    margin: 0.25rem 0;
+  }
+  .plans_features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+  .plans_list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .plans_list-item .icon-1x1-medium {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+</style>
+
 </Layout>
