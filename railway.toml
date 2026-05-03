@@ -1,6 +1,6 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "npm run build"
+buildCommand = "npx astro build"
 
 [deploy]
 startCommand = "npx astro preview --host 0.0.0.0 --port $PORT"
