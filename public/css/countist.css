@@ -1525,7 +1525,6 @@ figcaption {
 }
 
 .footer_copy {
-  border-top: 1px solid var(--color--brown--200);
   justify-content: space-between;
   align-items: center;
   padding-top: 2rem;
