@@ -162,6 +162,7 @@ const jsonLd = [
             </div>
             <div class="stat-number">89%</div>
             <p class="stat-desc">Percent of consumers who underestimate how much they spend on subscriptions.</p>
+            <p class="stat-citation">C+R Research's subscription spending survey</p>
           </div>
 
           <!-- 42% -->
@@ -176,6 +177,7 @@ const jsonLd = [
             </div>
             <div class="stat-number">42%</div>
             <p class="stat-desc">Percent of consumers who admit to forgetting a subscription and continuing to pay for it.</p>
+            <p class="stat-citation">C+R Research's subscription spending survey</p>
           </div>
 
           <!-- +2.5x — before/after comparison chart -->
@@ -197,6 +199,7 @@ const jsonLd = [
             </div>
             <div class="stat-number">+2.5x</div>
             <p class="stat-desc">Amount that actual subscription costs exceed subscribers' estimates.</p>
+            <p class="stat-citation">C+R Research's subscription spending survey</p>
           </div>
 
         </div>
@@ -694,6 +697,13 @@ const jsonLd = [
     line-height: 1.55;
     color: #4a4540;
     margin: 0;
+  }
+  .stat-citation {
+    font-size: 0.6875rem;
+    color: #9a9089;
+    margin: 0;
+    font-style: italic;
+    line-height: 1.4;
   }
   @media (max-width: 767px) {
     .stats-cards { grid-template-columns: 1fr; }
