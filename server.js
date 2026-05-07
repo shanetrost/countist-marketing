@@ -27,7 +27,15 @@ const mime = {
 };
 
 createServer(async (req, res) => {
-  let p = decodeURIComponent(req.url.split('?')[0].replace(/\/+$/, '') || '/');
+  const rawPath = req.url.split('?')[0].replace(/\/+$/, '') || '/';
+  let p;
+  try {
+    p = decodeURIComponent(rawPath);
+  } catch {
+    res.writeHead(400, { 'Content-Type': 'text/plain' });
+    res.end('Bad Request');
+    return;
+  }
 
   const candidates = [
     join(DIST, p),
