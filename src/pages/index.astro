@@ -379,6 +379,7 @@ const jsonLd = [
             loading="lazy"
             alt=""
             aria-hidden="true"
+            class="supercharge-img"
             style="width:100%;display:block;margin:-2rem auto -3rem;"
           />
           <div class="w-layout-grid plans_grid">
@@ -474,7 +475,7 @@ const jsonLd = [
           <div class="faq_header fade-in-bottom">
             <h2 class="heading-style-h2">Need Help?</h2>
             <a href="/contact" class="text-color-accent" style="text-decoration:underline;font-size:1rem;">Contact us to get an answer</a>
-            <img src="/images/harold.png" loading="lazy" alt="" aria-hidden="true" style="width:60%;display:block;margin-top:1.5rem;" />
+            <img src="/images/harold.png" loading="lazy" alt="" aria-hidden="true" class="faq-harold-img" style="width:60%;display:block;margin-top:1.5rem;" />
           </div>
           <div class="faq_list fade-in-bottom">
             <details class="faq_item">
@@ -756,6 +757,7 @@ const jsonLd = [
   }
   @media (max-width: 767px) {
     .plans_grid { grid-template-columns: 1fr; }
+    .supercharge-img { margin: 0 auto 1.5rem !important; }
   }
   .plans_item {
     border-radius: 1rem;
@@ -811,6 +813,8 @@ const jsonLd = [
   }
   @media (max-width: 767px) {
     .faq_component { grid-template-columns: 1fr; gap: 2rem; }
+    .faq_header { position: static; }
+    .faq-harold-img { display: none; }
   }
   .faq_header {
     position: sticky;
