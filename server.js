@@ -26,6 +26,11 @@ const mime = {
   '.webp': 'image/webp',
 };
 
+const REDIRECTS = {
+  '/home': '/',
+  '/join': 'https://app.countist.app/join',
+};
+
 createServer(async (req, res) => {
   const rawPath = req.url.split('?')[0].replace(/\/+$/, '') || '/';
   let p;
@@ -34,6 +39,12 @@ createServer(async (req, res) => {
   } catch {
     res.writeHead(400, { 'Content-Type': 'text/plain' });
     res.end('Bad Request');
+    return;
+  }
+
+  if (REDIRECTS[p]) {
+    res.writeHead(301, { Location: REDIRECTS[p] });
+    res.end();
     return;
   }
 
