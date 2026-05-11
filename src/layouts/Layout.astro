@@ -50,6 +50,17 @@ const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : null;
 
   {googleVerification && <meta name="google-site-verification" content={googleVerification} />}
 
+  <!-- Redirect authenticated users to the app -->
+  <script>
+    (function () {
+      var uat = document.cookie.split(';').map(function(c){ return c.trim(); }).find(function(c){ return c.startsWith('__client_uat='); });
+      if (uat) {
+        var val = parseInt(uat.split('=')[1], 10);
+        if (val > 0) { window.location.replace('https://app.countist.app'); }
+      }
+    })();
+  </script>
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
