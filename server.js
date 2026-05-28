@@ -28,7 +28,6 @@ const mime = {
 
 const REDIRECTS = {
   '/home': '/',
-  '/join': 'https://app.countist.app/join',
 };
 
 createServer(async (req, res) => {
