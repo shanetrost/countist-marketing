@@ -29,14 +29,50 @@ const jsonLd = [
         "name": "Monthly Plan",
         "price": "4.99",
         "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+          },
+          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnFees": "https://schema.org/FreeReturn",
+          "returnPolicySeasonalOverride": "Cancel anytime. No charge if cancelled before day 15 of trial."
+        }
       },
       {
         "@type": "Offer",
         "name": "Annual Plan",
         "price": "49",
         "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+          },
+          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnFees": "https://schema.org/FreeReturn",
+          "returnPolicySeasonalOverride": "Cancel anytime. No charge if cancelled before day 15 of trial."
+        }
       }
     ],
     "featureList": [
