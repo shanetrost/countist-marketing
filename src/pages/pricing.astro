@@ -1,6 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+// Fetch live aggregate rating from the app backend at build time
+let aggregateRating: { "@type": string; ratingValue: string; reviewCount: number; bestRating: string; worstRating: string } | undefined;
+try {
+  const ratingRes = await fetch("https://app.countist.app/api/public/aggregate-rating");
+  if (ratingRes.ok) {
+    const data = await ratingRes.json();
+    if (data && data.reviewCount > 0) {
+      aggregateRating = {
+        "@type": "AggregateRating",
+        ratingValue: String(data.ratingValue),
+        reviewCount: data.reviewCount,
+        bestRating: "5",
+        worstRating: "1",
+      };
+    }
+  }
+} catch {
+  // No rating available — omit from JSON-LD
+}
+
 const jsonLd = [
   {
     "@context": "https://schema.org",
@@ -10,6 +30,7 @@ const jsonLd = [
     "url": "https://countist.app/pricing",
     "image": "https://countist.app/images/og-pricing.png",
     "brand": { "@type": "Brand", "name": "Countist" },
+    ...(aggregateRating ? { aggregateRating } : {}),
     "offers": [
       {
         "@type": "Offer",
